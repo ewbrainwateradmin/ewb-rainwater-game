@@ -1,4 +1,4 @@
-WATER_SHED_PATH = "C:/your_path_goes_here/water-shed/"
+WATER_SHED_PATH = "C:/Users/kayak/Documents/EWB-Rainwater-Project/ewb-rainwater-game/"
 
 TIME_OUT_TIME = 90
 timeout_timer = 0
@@ -35,15 +35,15 @@ end
 function star(cx, cy, spikes, startAngle, outerRadius, innerRadius)
   rot = startAngle;
   step = math.pi / spikes;
-  
+
   x = cx
   y = cy
-  
+
   vertices = {}
 
   table.insert(vertices, cx)
   table.insert(vertices, cy - outerRadius)
-    
+
   for i = 0, spikes do
     x = cx + math.cos(rot) * outerRadius;
     y = cy + math.sin(rot) * outerRadius;
@@ -59,7 +59,7 @@ function star(cx, cy, spikes, startAngle, outerRadius, innerRadius)
   end
   table.insert(vertices, cx)
   table.insert(vertices, cy-outerRadius)
-  
+
   return vertices
 end
 
@@ -268,10 +268,10 @@ function love.load()
   love.window.setTitle("Water Shed")
 
   love.window.setFullscreen(true)
-  
+
   width = love.graphics.getWidth()
   height = love.graphics.getHeight()
-  
+
   regular_font = love.graphics.newFont("res/elite_font.ttf", 50) -- 60
   smallest_font = love.graphics.newFont("res/elite_font.ttf", 25) -- 35
   small_font = love.graphics.newFont("res/elite_font.ttf", 30) -- 45
@@ -307,12 +307,12 @@ function love.update(dt)
       io.output(pledges_file)
       io.write(os.date("%c") .. " tap to play button pressed", "\n")
       io.close(pledges_file)
-  
+
       -- transition to sorting
       next_screen_timer = 0
       transition_to("phase_a_intro")
     end
-    
+
   elseif curr_page == "phase_a_intro" then
     if is_mouse_clicked then
       transition_to("phase_a")
@@ -416,7 +416,7 @@ function love.update(dt)
       player.curr_choice_index = player.phase_a_choice_indices[1]
     end
   elseif curr_page == "phase_b" then
-    
+
     -- update selected choices
     num_choice_sets = math.ceil(#curr_choice_choices/3)
     for index, choice in pairs(curr_choice_choices) do
@@ -509,19 +509,19 @@ function love.update(dt)
       transition_to("main")
     end
   end
-  
+
   -- handle transitions
   transition.y = transition.y + (transition.to_y - transition.y) / 3
   if transition.y > transition.to_y - 10 then
     curr_page = transition.to
     transition.to_y = 0
   end
-  
+
   -- update page responsive timer
   if f_c % 60 == 0 then
     transition.page_responsive_timer = transition.page_responsive_timer - 1
   end
-  
+
   -- handle end of frame update
   f_c = f_c + 1
   is_mouse_clicked = false
@@ -537,7 +537,7 @@ end
 
 -- DRAW
 
-function love.draw(dt)  
+function love.draw(dt)
   -- menu page
   if curr_page == "main" then
     love.graphics.setBackgroundColor(0/255, 193/255, 227/255)
@@ -550,7 +550,7 @@ function love.draw(dt)
     love.graphics.setFont(smallest_font)
     love.graphics.setColor(0, 0, 0, 80)
     --love.graphics.setColor(50/255, 50/255, 50/255)
-    
+
   elseif curr_page == "phase_a_intro" then
     -- love.graphics.setBackgroundColor(158, 193, 227)
     love.graphics.setBackgroundColor(158/255, 193/255, 227/255)
@@ -829,7 +829,7 @@ function love.draw(dt)
     love.graphics.printf(factoid_to_show[2], 50, height/2 + 25*5 + regular_font:getHeight() + small_font:getHeight() + regular_font:getHeight(), width - 100, "left")
     love.graphics.setColor(91/255, 155/255, 213/255, 40/255)
     love.graphics.rectangle("fill", 0, height/2 + 25*5, width, height)
-    
+
     -- print buttons to continue
     love.graphics.setColor(50*COLOR_VALUE_FACTOR/255, 50*COLOR_VALUE_FACTOR/255, 50*COLOR_VALUE_FACTOR/255, 100*COLOR_VALUE_FACTOR/255)
     love.graphics.setFont(regular_font)
@@ -846,7 +846,7 @@ function love.draw(dt)
     love.graphics.print("Game Development: Caleb Winston (https://github.com/calebwin)", width/2 - small_font:getWidth("Game Development: Caleb Winston (https://github.com/calebwin)")/2, height/2 - small_font:getHeight())
     love.graphics.print("Graphics/Design: -----------", width/2 - small_font:getWidth("Graphics/Design: -----------")/2, height/2 - small_font:getHeight() + 100)
   end
-  
+
   -- draw transitions
   love.graphics.setColor(50*COLOR_VALUE_FACTOR, 50*COLOR_VALUE_FACTOR, 50*COLOR_VALUE_FACTOR)
   love.graphics.rectangle("fill", 0, -height + transition.y, width, height)
