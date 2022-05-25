@@ -7,11 +7,9 @@ that many items/choices could have hidden or unexpected water footprints.
 
 #### Setting up game
 
-- Follow the instructions [here](https://love2d.org/wiki/Getting_Started) to get LOVE
+- Follow the instructions [here](https://love2d.org/) to download Love2D
 - Clone this repo
-- Replace the empty res folder with the provided res folder that contains graphics and fonts
 - At the top of the *main.lua*, set WATER_SHED_PATH to the path to your local clone of the water-shed repo
+- Create a .zip file with main.lua, res/, and data/; rename this .zip to game.love
+- Open this new file with Love2D to run the game
 
-#### Launching game
-
-- Follow the instructions [here](https://love2d.org/wiki/Getting_Started) to launch the game

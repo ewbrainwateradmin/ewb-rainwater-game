@@ -1,4 +1,4 @@
-WATER_SHED_PATH = "C:/Users/kayak/Documents/EWB-Rainwater-Project/ewb-rainwater-game/"
+WATER_SHED_PATH = "C:/Users/kayak/OneDrive/Documents/Personal Files/EWB-Rainwater-Project/ewb-rainwater-client/"
 
 TIME_OUT_TIME = 90
 timeout_timer = 0
