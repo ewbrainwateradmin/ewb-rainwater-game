@@ -1,4 +1,4 @@
-WATER_SHED_PATH = "C:\Users\jana_\OneDrive - UW\PHB\LOVE"
+WATER_SHED_PATH = "/your_path_goes_here/water-shed/"
 
 TIME_OUT_TIME = 90
 timeout_timer = 0
