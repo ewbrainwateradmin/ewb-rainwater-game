@@ -1,4 +1,4 @@
-WATER_SHED_PATH = "C:\\Users\\jana_\\OneDrive - UW\\ewb-rainwater-game"
+WATER_SHED_PATH = "C:\\Users\\jana_\\OneDrive - UW\\ewb-rainwater-game\\"
 
 TIME_OUT_TIME = 90
 timeout_timer = 0
@@ -200,10 +200,6 @@ function load_water_shed()
   CHOICES = {}
   -- for line in io.lines("/sdcard/lovegame/data/choices.csv") do
   for line in io.lines(WATER_SHED_PATH .. "data/choices.csv") do
-    local file_path = WATER_SHED_PATH .. "data/choices.csv"
-    if not file_exists(file_path) then
-      error("File not found: " .. file_path)
-    end
     parsed_csv = from_csv(line)
     num_cols_on_line = 0
     for i, col in pairs(parsed_csv) do
