@@ -200,6 +200,10 @@ function load_water_shed()
   CHOICES = {}
   -- for line in io.lines("/sdcard/lovegame/data/choices.csv") do
   for line in io.lines(WATER_SHED_PATH .. "data/choices.csv") do
+    local file_path = WATER_SHED_PATH .. "data/choices.csv"
+    if not file_exists(file_path) then
+      error("File not found: " .. file_path)
+    end
     parsed_csv = from_csv(line)
     num_cols_on_line = 0
     for i, col in pairs(parsed_csv) do
@@ -263,7 +267,7 @@ RANDOM_GRAPHICS = {}
 function love.load()
   IMAGE_PATH = WATER_SHED_PATH .. "res/"
 
-  common_font = love.graphics.newFont("res/AvenirLTStd-Heavy.otf", 55)
+  common_font = love.graphics.newFont("res/fonts/Roboto-Light.ttf", 24) -- 24 is the font size
 
   love.window.setTitle("Water Shed")
 
@@ -272,10 +276,10 @@ function love.load()
   width = love.graphics.getWidth()
   height = love.graphics.getHeight()
   
-  regular_font = love.graphics.newFont("res/elite_font.ttf", 50) -- 60
-  smallest_font = love.graphics.newFont("res/elite_font.ttf", 25) -- 35
-  small_font = love.graphics.newFont("res/elite_font.ttf", 30) -- 45
-  title_font = love.graphics.newFont("res/elite_font.ttf", 84) -- 84
+  regular_font = love.graphics.newFont("res/fonts/Roboto-Light.ttf", 24) -- 24 is the font size
+  smallest_font = love.graphics.newFont("res/fonts/Roboto-Light.ttf", 36) -- 36
+  small_font = love.graphics.newFont("res/fonts/Roboto-Light.ttf", 48) -- 48
+  title_font = love.graphics.newFont("res/fonts/Roboto-Light.ttf", 60) -- 60
 
   RANDOM_GRAPHICS = {
     title = love.graphics.newImage("res/random/title.png")
