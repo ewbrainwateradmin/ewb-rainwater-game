@@ -1,4 +1,4 @@
-WATER_SHED_PATH = "/your_path_goes_here/water-shed/"
+WATER_SHED_PATH = "C:\\Users\\jana_\\OneDrive - UW\\ewb-rainwater-game\\"
 
 TIME_OUT_TIME = 90
 timeout_timer = 0
@@ -263,7 +263,7 @@ RANDOM_GRAPHICS = {}
 function love.load()
   IMAGE_PATH = WATER_SHED_PATH .. "res/"
 
-  common_font = love.graphics.newFont("res/AvenirLTStd-Heavy.otf", 55)
+  common_font = love.graphics.newFont("res/fonts/Roboto-Light.ttf", 24) -- 24 is the font size
 
   love.window.setTitle("Water Shed")
 
@@ -272,10 +272,10 @@ function love.load()
   width = love.graphics.getWidth()
   height = love.graphics.getHeight()
   
-  regular_font = love.graphics.newFont("res/elite_font.ttf", 50) -- 60
-  smallest_font = love.graphics.newFont("res/elite_font.ttf", 25) -- 35
-  small_font = love.graphics.newFont("res/elite_font.ttf", 30) -- 45
-  title_font = love.graphics.newFont("res/elite_font.ttf", 84) -- 84
+  regular_font = love.graphics.newFont("res/fonts/Roboto-Light.ttf", 24) -- 24 is the font size
+  smallest_font = love.graphics.newFont("res/fonts/Roboto-Light.ttf", 36) -- 36
+  small_font = love.graphics.newFont("res/fonts/Roboto-Light.ttf", 48) -- 48
+  title_font = love.graphics.newFont("res/fonts/Roboto-Light.ttf", 60) -- 60
 
   RANDOM_GRAPHICS = {
     title = love.graphics.newImage("res/random/title.png")
