@@ -1,4 +1,4 @@
-WATER_SHED_PATH = "C:\\Users\\jana_\\OneDrive - UW\\ewb-rainwater-game\\"
+WATER_SHED_PATH = "YOUR PATH GOES HERE"
 
 TIME_OUT_TIME = 90
 timeout_timer = 0
